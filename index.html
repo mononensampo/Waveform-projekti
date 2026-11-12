@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waveform – browse artists and albums with Last.fm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <header class="brand">
+        <div class="logo">
+          <span class="wave" aria-hidden="true">
+            <i style="--i:0;--h:35%"></i>
+            <i style="--i:1;--h:55%"></i>
+            <i style="--i:2;--h:80%"></i>
+            <i style="--i:3;--h:45%"></i>
+            <i style="--i:4;--h:100%"></i>
+            <i style="--i:5;--h:65%"></i>
+            <i style="--i:6;--h:35%"></i>
+            <i style="--i:7;--h:90%"></i>
+            <i style="--i:8;--h:60%"></i>
+            <i style="--i:9;--h:40%"></i>
+            <i style="--i:10;--h:85%"></i>
+            <i style="--i:11;--h:50%"></i>
+            <i style="--i:12;--h:70%"></i>
+            <i style="--i:13;--h:30%"></i>
+          </span>
+          <h1>Waveform</h1>
+        </div>
+        <p>Pick an artist and look through their catalog</p>
+      </header>
+
+      <form id="search-form" class="search" role="search">
+        <input id="search-input" type="search" placeholder="Find another artist" aria-label="Find another artist" autocomplete="off">
+        <button type="submit">Find</button>
+      </form>
+
+      <nav aria-label="Artists">
+        <ul id="artist-list" class="artist-list"></ul>
+      </nav>
+    </aside>
+
+    <main id="main" class="main" aria-live="polite" tabindex="-1"></main>
+  </div>
+
+  <dialog id="album-dialog" aria-labelledby="album-title">
+    <div id="album-body"></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
