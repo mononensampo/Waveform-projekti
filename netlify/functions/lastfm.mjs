@@ -17,6 +17,10 @@ export async function handler(event) {
   params.set("api_key", process.env.MY_API_KEY);
   params.set("format", "json");
 
+  if (!process.env.MY_API_KEY) {
+  return { statusCode: 500, body: JSON.stringify({ error: "API key is not configured" }) };
+}
+
   try {
     const response = await fetch(`https://ws.audioscrobbler.com/2.0/?${params}`);
     const data = await response.json();
